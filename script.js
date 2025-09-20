@@ -30,30 +30,38 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Enhanced touch interactions for mobile
-if ('ontouchstart' in window) {
-    // Add touch feedback to interactive elements
-    document.querySelectorAll('.btn, .filter-btn, .portfolio-link, .social-link').forEach(element => {
-        element.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(0.95)';
-        });
-        
-        element.addEventListener('touchend', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
+// Enhanced Profile Image Interactions
+document.addEventListener('DOMContentLoaded', () => {
+    const imageContainer = document.querySelector('.image-container');
     
-    // Enhanced portfolio item interactions
-    document.querySelectorAll('.portfolio-item, .book-card').forEach(item => {
-        item.addEventListener('touchstart', function() {
-            this.style.transform = 'translateY(-5px) scale(0.98)';
-        });
+    if (imageContainer) {
+        // Add touch interactions for mobile
+        if ('ontouchstart' in window) {
+            imageContainer.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 35px 70px rgba(102, 126, 234, 0.3)';
+            });
+            
+            imageContainer.addEventListener('touchend', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = '0 25px 50px rgba(102, 126, 234, 0.2)';
+            });
+        }
         
-        item.addEventListener('touchend', function() {
-            this.style.transform = 'translateY(0) scale(1)';
+        // Add click interaction for desktop
+        imageContainer.addEventListener('click', function() {
+            if (!('ontouchstart' in window)) {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 35px 70px rgba(102, 126, 234, 0.3)';
+                
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = '0 25px 50px rgba(102, 126, 234, 0.2)';
+                }, 200);
+            }
         });
-    });
-}
+    }
+});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
