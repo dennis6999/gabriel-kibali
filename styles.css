@@ -983,7 +983,7 @@ section {
     }
 }
 
-/* Responsive Profile Image */
+/* Responsive Profile Image - Desktop */
 @media (max-width: 1200px) {
     .image-container {
         max-width: 320px;
@@ -998,25 +998,10 @@ section {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .image-container {
-        max-width: 250px;
-        height: 250px;
-    }
-    
-    .overlay-content h4 {
-        font-size: 1rem;
-    }
-    
-    .overlay-content p {
-        font-size: 0.85rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .image-container {
-        max-width: 220px;
-        height: 220px;
+        max-width: 280px;
+        height: 280px;
     }
 }
 
@@ -1129,46 +1114,60 @@ section {
         display: none; /* Hide floating elements on mobile for cleaner look */
     }
 
-    /* Mobile About Section - Professional */
+/* Mobile Profile Image - Complete Fix */
+@media (max-width: 768px) {
     .about-main {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2rem;
         margin-bottom: 3rem;
+        text-align: center;
     }
 
     .about-text {
         padding-right: 0;
+        order: 2;
     }
 
-    .about-intro,
-    .about-philosophy {
-        padding: 1.5rem;
+    .about-image {
+        order: 1;
         margin-bottom: 2rem;
     }
 
-    .about-intro h3,
-    .about-philosophy h3 {
-        font-size: 1.3rem;
-    }
-
-    .about-intro p,
-    .about-philosophy p {
-        font-size: 1rem;
-    }
-
     .image-container {
-        width: 100%;
-        max-width: 280px;
-        height: 280px;
+        width: 200px !important;
+        height: 200px !important;
+        max-width: 200px !important;
+        margin: 0 auto;
     }
 
     .overlay-content h4 {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
 
     .overlay-content p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
+
+    .image-overlay {
+        padding: 1rem 0.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .image-container {
+        width: 180px !important;
+        height: 180px !important;
+        max-width: 180px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-container {
+        width: 160px !important;
+        height: 160px !important;
+        max-width: 160px !important;
+    }
+}
 
     .expertise-section {
         padding: 2rem;
