@@ -1154,6 +1154,10 @@ section {
     }
 
     /* Mobile Hero Section */
+    .hero {
+        padding-top: 6rem;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         gap: 3rem;
